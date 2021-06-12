@@ -12,9 +12,13 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    google()
     maven("https://m2.dv8tion.net/releases")
     jcenter()
 }
+
+val jdaVersion: String by  project
+val exposedVersion: String by project
 
 dependencies {
     implementation(kotlin("stdlib"))
@@ -22,6 +26,9 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     implementation("net.dv8tion:JDA:4.3.0_277")
     implementation("com.jagrosh:jda-utilities:2.1")
+    implementation("org.jetbrains.exposed:exposed-core:0.32.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.32.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.32.1")
 }
 
 tasks.getByName<Test>("test") {
@@ -29,5 +36,5 @@ tasks.getByName<Test>("test") {
 }
 
 application{
-    mainClass.set("$group.${rootProject.name}.MainKt")
+    mainClass.set("$group.democracy.MainKt")
 }
