@@ -1,9 +1,12 @@
 package me.nashiroaoi.democracy.internal
 
-class PoleRole {
-    companion object{
-        fun registered(roleID:String){
-        }
+data class PoleRole(
+    val registered:Boolean=false,
+    val roleId:String="",
+    val roleName:String?=null,
+    val poleWeight:Float?=null,
+){
+    fun write(){
     }
 }
 
