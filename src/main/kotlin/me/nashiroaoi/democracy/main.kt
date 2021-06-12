@@ -1,12 +1,11 @@
 package me.nashiroaoi.democracy
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder
+import me.nashiroaoi.democracy.internal.PropertiesIO
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.requests.GatewayIntent
-import java.nio.file.Paths
 
-lateinit var path: String
 
 class BotClient{
     private lateinit var jda: JDA
@@ -25,6 +24,6 @@ class BotClient{
 }
 
 fun main(){
-    val relativePath = Paths.get("")
-    path = relativePath.toAbsolutePath().toString()
+    println(PropertiesIO.propertiesDir)
+    PropertiesIO().init()
 }
